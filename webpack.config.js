@@ -9,5 +9,15 @@ module.exports = {
     output: {
         path: BUILD_DIR,
         filename: 'app.bundle.js',
+    },
+    module: {
+        rules:[
+            {
+                test: /\.(js|jsx)$/,
+                // include: APP_DIR,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            }
+        ]
     }
 }
